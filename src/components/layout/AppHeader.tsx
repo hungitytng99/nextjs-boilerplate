@@ -1,5 +1,11 @@
-function AuthFooter() {
-  return <div>AuthFooter</div>;
+"use client";
+
+function AppHeader() {
+  return (
+    <div>
+      AppHeader <br />
+    </div>
+  );
 }
 
-export default AuthFooter;
+export default AppHeader;

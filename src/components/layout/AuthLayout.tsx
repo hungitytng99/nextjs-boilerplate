@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { StoreProvider } from "../provider/StoreProvider";
 import AuthHeader from "./AuthHeader";
-import AuthFooter from "./AppHeader";
+import AuthFooter from "./AuthFooter";
 
 function AuthLayout({ children }: { children: ReactNode }) {
   return (

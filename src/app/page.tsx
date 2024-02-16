@@ -1,10 +1,16 @@
+import AppLayout from "@/components/layout/AppLayout";
 import Link from "next/link";
-import { NextPageWithLayout } from "../pages/_app";
 
-const HomePage: NextPageWithLayout = () => {
-  return <div>Home Page
-    <Link href="/buyer/login">Login</Link>
-  </div>;
+const HomePage = () => {
+  return (
+    <AppLayout>
+      Home Page
+      <br />
+      <Link href="/buyer/login">Login</Link>
+      <br />
+      <Link href="/search">Search</Link>
+    </AppLayout>
+  );
 };
 
 export default HomePage;

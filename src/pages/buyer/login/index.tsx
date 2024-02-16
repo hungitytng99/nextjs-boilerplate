@@ -36,6 +36,8 @@ const LoginPage: NextPageWithLayout = () => {
       <br />
       <br />
       <Link href="/buyer/sign-up">Signup</Link>
+      <br />
+      <Link href="/">Homepage</Link>
     </div>
   );
 };
