@@ -1,12 +1,14 @@
 import type { ReactNode } from "react";
+import AppHeader from "./AppHeader";
+import AppFooter from "./AppFooter";
 
 function AppLayout({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <div>Header AppLayout</div>
+    <>
+      <AppHeader />
       <main>{children}</main>
-      <div>Footer AppLayout</div>
-    </div>
+      <AppFooter />
+    </>
   );
 }
 
