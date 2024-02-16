@@ -4,6 +4,7 @@ export const appContants = {
   tokenKey: "tokenKey",
 
   requestState: {
+    initial: "initial",
     request: "request",
     success: "success",
     error: "error",

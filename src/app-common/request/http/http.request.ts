@@ -3,7 +3,7 @@ import IRequest from "@/shared/types/request/IRequest";
 import { IRequestOptions } from "@/shared/types/request/IRequestOptions";
 import { AxiosTypes, ShareTypes } from "@/shared/types/share.types";
 import type IStorage from "@/shared/types/storage/IStorage";
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { inject, injectable } from "inversify";
 import queryString from "query-string";
 
@@ -16,6 +16,27 @@ export class HttpRequest implements IRequest {
     @inject(ShareTypes.IStorage) appStorage: IStorage,
     @inject(AxiosTypes.Axios) httpClient: AxiosInstance
   ) {
+    httpClient.interceptors.request.use(
+      function (config: InternalAxiosRequestConfig) {
+        return config;
+      },
+      function (error) {
+        return Promise.reject(error);
+      }
+    );
+
+    httpClient.interceptors.response.use(
+      function (response: AxiosResponse) {
+        return response;
+      },
+      function (error) {
+        if (error.response && error.response.data) {
+          return Promise.reject(error.response.data);
+        }
+        return Promise.reject(error);
+      }
+    );
+
     this._httpClient = httpClient;
     this._appStorage = appStorage;
   }

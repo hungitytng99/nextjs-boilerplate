@@ -1,16 +1,10 @@
-import { appConsole, appRequest } from "@/app-configs";
+import Link from "next/link";
+import { NextPageWithLayout } from "../pages/_app";
 
-type Repo = {
-  name: string;
-  stargazers_count: number;
+const HomePage: NextPageWithLayout = () => {
+  return <div>Home Page
+    <Link href="/buyer/login">Login</Link>
+  </div>;
 };
 
-export default async function Home() {
-  const repo: Repo = await appRequest.get<Repo>(
-    "https://api.github.com/repos/vercel/next.js",
-    {},
-    { isFullPath: true }
-  );
-  appConsole.log(repo.stargazers_count);
-  return <div>Main page</div>;
-}
+export default HomePage;
