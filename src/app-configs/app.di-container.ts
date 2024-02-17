@@ -1,13 +1,13 @@
-import 'reflect-metadata'
-import { HttpRequest } from '@/app-common/request/http/http.request'
-import { CookiesStorage } from '@/app-common/storage/cookies.storage'
-import IRequest from '@/shared/types/request/IRequest'
-import { AxiosSymbol, ShareSymbol } from '@/shared/types/share.types'
-import IStorage from '@/shared/types/storage/IStorage'
-import ILogger from '@/shared/types/logger/ILogger'
+import { AppLogger } from '@/shared/common/logger/app.logger'
+import { HttpRequest } from '@/shared/common/request/http/http.request'
+import { CookiesStorage } from '@/shared/common/storage/cookies.storage'
+import ILogger from '@/shared/interfaces/logger/ILogger'
+import IRequest from '@/shared/interfaces/request/IRequest'
+import { AxiosSymbol, ShareSymbol } from '@/shared/interfaces/share.types'
+import IStorage from '@/shared/interfaces/storage/IStorage'
 import axios, { AxiosInstance } from 'axios'
 import { Container } from 'inversify'
-import { AppLogger } from '@/app-common/logger/app.logger'
+import 'reflect-metadata'
 
 const appContainer = new Container()
 // Bind interface to specific instance
@@ -22,4 +22,5 @@ const appRequest = appContainer.get<IRequest>(ShareSymbol.IRequest)
 const appStorage = appContainer.get<IStorage>(ShareSymbol.IStorage)
 const appFetch = appContainer.get<AxiosInstance>(AxiosSymbol.Axios)
 
-export { appContainer, appLogger, appRequest, appStorage, appFetch }
+export { appContainer, appFetch, appLogger, appRequest, appStorage }
+

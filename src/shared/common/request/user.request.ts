@@ -1,7 +1,7 @@
 import { appContainer, appContants } from '@/app-configs'
-import { RequestState } from '@/app-configs/app.configs'
-import IRequest from '@/shared/types/request/IRequest'
-import { ShareSymbol } from '@/shared/types/share.types'
+import { RequestState } from '@/app-configs/app.contants'
+import IRequest from '@/shared/interfaces/request/IRequest'
+import { ShareSymbol } from '@/shared/interfaces/share.types'
 
 const httpRequest = appContainer.get<IRequest>(ShareSymbol.IRequest)
 

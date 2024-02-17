@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
-import IStorage from '@/shared/types/storage/IStorage'
+import IStorage from '@/shared/interfaces/storage/IStorage'
 import { injectable } from 'inversify'
 
 @injectable()

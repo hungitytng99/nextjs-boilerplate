@@ -1,8 +1,8 @@
 import { appContants } from '@/app-configs'
-import IRequest from '@/shared/types/request/IRequest'
-import { IRequestOptions } from '@/shared/types/request/IRequestOptions'
-import { AxiosSymbol, ShareSymbol } from '@/shared/types/share.types'
-import type IStorage from '@/shared/types/storage/IStorage'
+import IRequest from '@/shared/interfaces/request/IRequest'
+import { IRequestOptions } from '@/shared/interfaces/request/IRequestOptions'
+import { AxiosSymbol, ShareSymbol } from '@/shared/interfaces/share.types'
+import type IStorage from '@/shared/interfaces/storage/IStorage'
 import type {
   AxiosInstance,
   AxiosRequestConfig,

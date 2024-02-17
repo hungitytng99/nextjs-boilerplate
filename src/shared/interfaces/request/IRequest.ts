@@ -1,4 +1,4 @@
-import { IRequestOptions } from '@/shared/types/request/IRequestOptions'
+import { IRequestOptions } from '@/shared/interfaces/request/IRequestOptions'
 
 export default interface IRequest {
   get<T>(path: string, params?: object, options?: IRequestOptions): Promise<T>
