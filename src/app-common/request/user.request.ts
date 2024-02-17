@@ -1,9 +1,9 @@
 import { appContainer, appContants } from "@/app-configs";
 import { RequestState } from "@/app-configs/app.configs";
 import IRequest from "@/shared/types/request/IRequest";
-import { ShareTypes } from "@/shared/types/share.types";
+import { ShareSymbol } from "@/shared/types/share.types";
 
-const httpRequest = appContainer.get<IRequest>(ShareTypes.IRequest);
+const httpRequest = appContainer.get<IRequest>(ShareSymbol.IRequest);
 
 export const userRequest = {
   list: async (params: object) => {
