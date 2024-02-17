@@ -1,4 +1,5 @@
 import { appContainer, appContants } from "@/app-configs";
+import { RequestState } from "@/app-configs/app.configs";
 import IRequest from "@/shared/types/request/IRequest";
 import { ShareTypes } from "@/shared/types/share.types";
 
@@ -12,14 +13,14 @@ export const userRequest = {
         params
       );
       return {
-        state: appContants.requestState.success,
+        state: RequestState.success,
         data: response,
       };
     } catch (error) {
       console.log("error", error);
       return {
         error: error,
-        state: appContants.requestState.error,
+        state: RequestState.error,
       };
     }
   },

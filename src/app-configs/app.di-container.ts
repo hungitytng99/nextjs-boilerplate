@@ -10,10 +10,16 @@ import { Container } from "inversify";
 import { AppLogger } from "@/app-common/logger/app.logger";
 
 const appContainer = new Container();
+// Bind interface to specific instance
 appContainer.bind<ILogger>(ShareTypes.ILogger).to(AppLogger);
 appContainer.bind<IRequest>(ShareTypes.IRequest).to(HttpRequest);
 appContainer.bind<IStorage>(ShareTypes.IStorage).to(CookiesStorage);
 appContainer.bind<AxiosInstance>(AxiosTypes.Axios).toConstantValue(axios);
 
-export { appContainer };
+// Get instance to use
+const appLogger = appContainer.get<ILogger>(ShareTypes.ILogger);
+const appRequest = appContainer.get<IRequest>(ShareTypes.IRequest);
+const appStorage = appContainer.get<IStorage>(ShareTypes.IStorage);
+const appFetch = appContainer.get<AxiosInstance>(AxiosTypes.Axios);
 
+export { appContainer, appLogger, appRequest, appStorage, appFetch };
