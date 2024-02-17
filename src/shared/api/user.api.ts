@@ -9,7 +9,10 @@ const httpRequest = appContainer.get<IRequest>(ShareSymbol.IRequest)
 export const userRequest = {
   login: async (params: object) => {
     try {
-      const response: ICommonResponse = await httpRequest.post<ICommonResponse>('/', params)
+      const response: ICommonResponse = await httpRequest.post<ICommonResponse>(
+        '/',
+        params,
+      )
       return {
         state: RequestState.success,
         data: response.data,
