@@ -44,6 +44,6 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "../src/**/*.{js,json,scss,css}": "npx format"
+    "src/**/*.{js,json,scss,css}": "npx format"
   }
 }
