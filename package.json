@@ -44,7 +44,6 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "./src/**/*.{ts,js,json,scss,sass,css}": "npx format",
-    "*.ts": "eslint --fix"
+    "./src/**/*.{ts,js,json,scss,sass,css}": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   }
 }
