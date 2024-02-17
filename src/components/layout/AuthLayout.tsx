@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
-import { StoreProvider } from "../../lib/redux/provider/StoreProvider";
-import AuthHeader from "./AuthHeader";
-import AuthFooter from "./AuthFooter";
+import type { ReactNode } from 'react'
+import { StoreProvider } from '../../lib/redux/provider/StoreProvider'
+import AuthHeader from './AuthHeader'
+import AuthFooter from './AuthFooter'
 
 function AuthLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,7 +10,7 @@ function AuthLayout({ children }: { children: ReactNode }) {
       <main>{children}</main>
       <AuthFooter />
     </StoreProvider>
-  );
+  )
 }
 
-export default AuthLayout;
+export default AuthLayout

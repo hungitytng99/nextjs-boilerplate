@@ -1,14 +1,14 @@
-import { RequestState } from "@/app-configs/app.configs";
-import AuthLayout from "@/components/layout/AuthLayout";
-import { useAppDispatch, useAppSelector } from "@/lib/redux/store/hook";
-import { getRandomUserAsync, selectUser, userSlice } from "@/lib/redux/slices";
-import { NextPageWithLayout } from "@/pages/_app";
-import Link from "next/link";
-import type { ReactElement } from "react";
+import { RequestState } from '@/app-configs/app.configs'
+import AuthLayout from '@/components/layout/AuthLayout'
+import { useAppDispatch, useAppSelector } from '@/lib/redux/store/hook'
+import { getRandomUserAsync, selectUser, userSlice } from '@/lib/redux/slices'
+import { NextPageWithLayout } from '@/pages/_app'
+import Link from 'next/link'
+import type { ReactElement } from 'react'
 
 const LoginPage: NextPageWithLayout = () => {
-  const userLogined = useAppSelector(selectUser);
-  const dispatch = useAppDispatch();
+  const userLogined = useAppSelector(selectUser)
+  const dispatch = useAppDispatch()
 
   return (
     <div>
@@ -30,8 +30,8 @@ const LoginPage: NextPageWithLayout = () => {
       <br />
       <br />
       <button onClick={() => dispatch(getRandomUserAsync())}>
-        {userLogined.status === RequestState.request && "Loading..."}
-        {userLogined.status !== RequestState.request && "Make api call"}
+        {userLogined.status === RequestState.request && 'Loading...'}
+        {userLogined.status !== RequestState.request && 'Make api call'}
       </button>
       <br />
       <br />
@@ -39,15 +39,15 @@ const LoginPage: NextPageWithLayout = () => {
       <br />
       <Link href="/">Homepage</Link>
     </div>
-  );
-};
+  )
+}
 
 LoginPage.getLayout = (page: ReactElement) => {
   return (
     <AuthLayout>
       <div>{page}</div>
     </AuthLayout>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage

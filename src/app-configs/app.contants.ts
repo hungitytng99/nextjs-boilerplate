@@ -1,6 +1,6 @@
 export const appContants = {
-  primaryEndPoint: "",
+  primaryEndPoint: '',
 
   // Key of value which store in Session, Cookies, LocalStorage
-  tokenKey: "tokenKey",
-};
+  tokenKey: 'tokenKey',
+}

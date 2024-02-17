@@ -1,3 +1,3 @@
-export * from "./user.slice";
-export * from "./thunks";
-export * from "./selectors";
+export * from './user.slice'
+export * from './thunks'
+export * from './selectors'

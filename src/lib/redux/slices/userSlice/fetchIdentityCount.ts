@@ -4,10 +4,10 @@ export const fetchIdentityCount = async (): Promise<{ name: string }> => {
       setTimeout(() => {
         resolve({
           name: `Manh Hung__${Math.floor(Math.random() * 100)}`,
-        });
-      }, 400);
-    });
-  };
-  const response = await fakeApi();
-  return response;
-};
+        })
+      }, 400)
+    })
+  }
+  const response = await fakeApi()
+  return response
+}

@@ -1,3 +1,3 @@
 export interface IRequestOptions {
-    isFullPath?: boolean,
+  isFullPath?: boolean
 }
