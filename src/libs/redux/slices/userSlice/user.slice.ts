@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { getRandomUserAsync } from '.'
-import { RequestState } from '@/app-configs/app.contants'
+import { RequestState } from '@/shared/configs/app.contants'
 
 const initialState: UserSliceState = {
   name: '',

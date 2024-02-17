@@ -1,4 +1,4 @@
-import { appContants } from '@/app-configs'
+import { appContants } from '@/shared/configs'
 import IRequest from '@/shared/interfaces/request/IRequest'
 import { IRequestOptions } from '@/shared/interfaces/request/IRequestOptions'
 import { AxiosSymbol, ShareSymbol } from '@/shared/interfaces/share.types'

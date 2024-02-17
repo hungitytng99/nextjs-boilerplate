@@ -4,7 +4,7 @@ import { getRandomUserAsync, selectUser, userSlice } from '@/libs/redux/slices'
 import { NextPageWithLayout } from '@/pages/_app'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
-import { RequestState } from '@/app-configs/app.contants'
+import { RequestState } from '@/shared/configs/app.contants'
 
 const LoginPage: NextPageWithLayout = () => {
   const userLogined = useAppSelector(selectUser)

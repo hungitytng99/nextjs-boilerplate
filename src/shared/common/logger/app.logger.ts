@@ -1,4 +1,4 @@
-import { appConfigs } from '@/app-configs/app.configs'
+import { appConfigs } from '@/shared/configs/app.configs'
 import ILogger from '@/shared/interfaces/logger/ILogger'
 import { injectable } from 'inversify'
 

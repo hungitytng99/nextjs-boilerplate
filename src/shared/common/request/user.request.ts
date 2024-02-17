@@ -1,5 +1,5 @@
-import { appContainer, appContants } from '@/app-configs'
-import { RequestState } from '@/app-configs/app.contants'
+import { appContainer, appContants } from '@/shared/configs'
+import { RequestState } from '@/shared/configs/app.contants'
 import IRequest from '@/shared/interfaces/request/IRequest'
 import { ShareSymbol } from '@/shared/interfaces/share.types'
 
