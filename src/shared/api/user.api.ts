@@ -2,16 +2,17 @@ import { appContainer, appContants } from '@/shared/configs'
 import { RequestState } from '@/shared/configs/app.contants'
 import IRequest from '@/shared/interfaces/request/IRequest'
 import { ShareSymbol } from '@/shared/interfaces/share.types'
+import ICommonResponse from '@/shared/interfaces/response/ICommonResponse'
 
 const httpRequest = appContainer.get<IRequest>(ShareSymbol.IRequest)
 
 export const userRequest = {
-  list: async (params: object) => {
+  login: async (params: object) => {
     try {
-      const response = await httpRequest.get('/issuer/list/institution', params)
+      const response: ICommonResponse = await httpRequest.post<ICommonResponse>('/', params)
       return {
         state: RequestState.success,
-        data: response,
+        data: response.data,
       }
     } catch (error) {
       console.log('error', error)
