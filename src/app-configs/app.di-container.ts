@@ -23,4 +23,3 @@ const appStorage = appContainer.get<IStorage>(ShareSymbol.IStorage)
 const appFetch = appContainer.get<AxiosInstance>(AxiosSymbol.Axios)
 
 export { appContainer, appFetch, appLogger, appRequest, appStorage }
-
