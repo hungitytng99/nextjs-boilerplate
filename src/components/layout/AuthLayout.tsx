@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { StoreProvider } from "../provider/StoreProvider";
+import { StoreProvider } from "../../lib/redux/provider/StoreProvider";
 import AuthHeader from "./AuthHeader";
 import AuthFooter from "./AuthFooter";
 

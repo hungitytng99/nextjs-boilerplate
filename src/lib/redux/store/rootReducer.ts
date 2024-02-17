@@ -1,6 +1,9 @@
 /* Instruments */
+import { combineReducers } from "@reduxjs/toolkit";
 import { userSlice } from "../slices";
 
-export const reducer = {
+const rootReducer = combineReducers({
   user: userSlice.reducer,
-};
+});
+
+export default rootReducer;

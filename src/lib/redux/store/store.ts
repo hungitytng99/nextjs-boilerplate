@@ -1,4 +1,3 @@
-/* Core */
 import {
   configureStore,
   type ThunkAction,
@@ -10,18 +9,27 @@ import {
   type TypedUseSelectorHook,
 } from "react-redux";
 
-/* Instruments */
-import { reducer } from "./rootReducer";
+import rootReducer from "./rootReducer";
 import { middleware } from "./middleware";
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
+const persistConfig = {
+  key: "rootReducer",
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const reduxStore = configureStore({
-  reducer,
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware().concat(middleware);
   },
 });
 export const useDispatch = () => useReduxDispatch<ReduxDispatch>();
 export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;
+export const persistor = persistStore(reduxStore);
 
 /* Types */
 export type ReduxStore = typeof reduxStore;
