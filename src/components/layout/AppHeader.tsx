@@ -1,7 +1,7 @@
 'use client'
 
-import { selectUser } from '@/lib/redux/slices'
-import { useAppSelector } from '@/lib/redux/store/hook'
+import { selectUser } from '@/libs/redux/slices'
+import { useAppSelector } from '@/libs/redux/store/hook'
 
 function AppHeader() {
   const userLogined = useAppSelector(selectUser)

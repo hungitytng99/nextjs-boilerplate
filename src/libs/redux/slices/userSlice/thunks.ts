@@ -1,4 +1,4 @@
-import { createAppAsyncThunk } from '@/lib/redux/store/createAppAsyncThunk'
+import { createAppAsyncThunk } from '@/libs/redux/store/createAppAsyncThunk'
 import { fetchIdentityCount } from './fetchIdentityCount'
 
 export const getRandomUserAsync = createAppAsyncThunk(

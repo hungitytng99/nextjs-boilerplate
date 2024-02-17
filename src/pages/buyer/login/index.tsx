@@ -1,6 +1,6 @@
 import AuthLayout from '@/components/layout/AuthLayout'
-import { useAppDispatch, useAppSelector } from '@/lib/redux/store/hook'
-import { getRandomUserAsync, selectUser, userSlice } from '@/lib/redux/slices'
+import { useAppDispatch, useAppSelector } from '@/libs/redux/store/hook'
+import { getRandomUserAsync, selectUser, userSlice } from '@/libs/redux/slices'
 import { NextPageWithLayout } from '@/pages/_app'
 import Link from 'next/link'
 import type { ReactElement } from 'react'

@@ -17,7 +17,7 @@ import {
   persistReducer,
   persistStore,
 } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import storage from 'redux-persist/libs/storage'
 
 const persistConfig = {
   key: 'rootReducer',

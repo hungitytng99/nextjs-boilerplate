@@ -2,8 +2,8 @@ import AuthLayout from '@/components/layout/AuthLayout'
 import type { ReactElement } from 'react'
 import { NextPageWithLayout } from '../../../pages/_app'
 import Link from 'next/link'
-import { useAppSelector } from '@/lib/redux/store/hook'
-import { selectUsername } from '@/lib/redux/slices'
+import { useAppSelector } from '@/libs/redux/store/hook'
+import { selectUsername } from '@/libs/redux/slices'
 
 const SignupPage: NextPageWithLayout = () => {
   const name = useAppSelector(selectUsername)
