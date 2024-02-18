@@ -1,6 +1,6 @@
 ## How to run
 - Run the following commands:
-1. `yarn install`
+1. `yarn`
 2. `yarn dev`
 
 ## Deploy
