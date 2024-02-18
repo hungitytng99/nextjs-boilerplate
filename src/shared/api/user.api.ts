@@ -19,12 +19,12 @@ interface TodoEntity {
 export const userRequest = {
   login: async (body?: NormalLoginBody) => {
     try {
-      const todoResponse: Array<TodoEntity> = await httpRequest.get<Array<TodoEntity>>(
-        'https://jsonplaceholder.typicode.com/todos',
-        body,
-        { isFullPath: true },
-      );
-      console.log('todoResponse: ', todoResponse);
+      // const todoResponse: Array<TodoEntity> = await httpRequest.get<Array<TodoEntity>>(
+      //   'https://jsonplaceholder.typicode.com/todos',
+      //   body,
+      //   { isFullPath: true },
+      // );
+      // console.log('todoResponse: ', todoResponse);
 
       // For simulator api testing
       const mockResponse: ICommonResponse<TokenEntity> = {
