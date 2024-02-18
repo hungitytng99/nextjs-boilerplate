@@ -1,5 +1,5 @@
 const appContants = {
-  primaryEndPoint: '',
+  primaryEndPoint: process.env.PRIMARY_END_POINT,
 
   // Key of value which store in Session, Cookies, LocalStorage
   tokenKey: 'tokenKey',
