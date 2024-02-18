@@ -6,7 +6,7 @@ import { ShareSymbol } from '@/shared/interfaces/share.types';
 import { MockApiHelper } from '@/shared/helpers/mock-api.helper';
 import { TokenEntity } from '@/shared/app-model/entities/token.entity';
 import { NormalLoginBody } from '@/shared/app-model/params/login.param';
-import { TodoEntity } from '../app-model/entities/todo.entity';
+import { TodoEntity } from '@/shared/app-model/entities/todo.entity';
 
 const httpRequest = appContainer.get<IRequest>(ShareSymbol.IRequest);
 
