@@ -1,5 +1,5 @@
-import AppLayout from '@/components/layout/AppLayout'
-import Link from 'next/link'
+import AppLayout from '@/components/layout/AppLayout';
+import Link from 'next/link';
 
 const HomePage = () => {
   return (
@@ -10,7 +10,7 @@ const HomePage = () => {
       <br />
       <Link href="/search">Search</Link>
     </AppLayout>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

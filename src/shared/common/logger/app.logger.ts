@@ -1,27 +1,27 @@
-import { appConfigs } from '@/shared/configs/app.configs'
-import ILogger from '@/shared/interfaces/logger/ILogger'
-import { injectable } from 'inversify'
+import { appConfigs } from '@/shared/configs/app.configs';
+import ILogger from '@/shared/interfaces/logger/ILogger';
+import { injectable } from 'inversify';
 
 @injectable()
 export class AppLogger implements ILogger {
   log(...args: any): void {
     appConfigs.logPipes.forEach((logPipe: ILogger) => {
-      logPipe.log(...args)
-    })
+      logPipe.log(...args);
+    });
   }
   error(...args: any): void {
     appConfigs.logPipes.forEach((logPipe: ILogger) => {
-      logPipe.error(...args)
-    })
+      logPipe.error(...args);
+    });
   }
   warn(...args: any): void {
     appConfigs.logPipes.forEach((logPipe: ILogger) => {
-      logPipe.warn(...args)
-    })
+      logPipe.warn(...args);
+    });
   }
   debug(...args: any): void {
     appConfigs.logPipes.forEach((logPipe: ILogger) => {
-      logPipe.debug(...args)
-    })
+      logPipe.debug(...args);
+    });
   }
 }

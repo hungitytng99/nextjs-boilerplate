@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react'
-import { StoreProvider } from '../../libs/redux/provider/StoreProvider'
-import AppFooter from './AppFooter'
-import AppHeader from './AppHeader'
+import type { ReactNode } from 'react';
+import { StoreProvider } from '../../libs/redux/provider/StoreProvider';
+import AppFooter from './AppFooter';
+import AppHeader from './AppHeader';
 
 function AppLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,7 +10,7 @@ function AppLayout({ children }: { children: ReactNode }) {
       <main>{children}</main>
       <AppFooter />
     </StoreProvider>
-  )
+  );
 }
 
-export default AppLayout
+export default AppLayout;

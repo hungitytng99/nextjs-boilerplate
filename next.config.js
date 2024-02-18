@@ -3,6 +3,6 @@ const nextConfig = {
   eslint: {
     dirs: ['src'],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

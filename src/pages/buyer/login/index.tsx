@@ -1,14 +1,14 @@
-import AuthLayout from '@/components/layout/AuthLayout'
-import { useAppDispatch, useAppSelector } from '@/libs/redux/store/hook'
-import { getRandomUserAsync, selectUser, userSlice } from '@/libs/redux/slices'
-import { NextPageWithLayout } from '@/pages/_app'
-import Link from 'next/link'
-import type { ReactElement } from 'react'
-import { RequestState } from '@/shared/configs/app.contants'
+import AuthLayout from '@/components/layout/AuthLayout';
+import { useAppDispatch, useAppSelector } from '@/libs/redux/store/hook';
+import { getRandomUserAsync, selectUser, userSlice } from '@/libs/redux/slices';
+import { NextPageWithLayout } from '@/pages/_app';
+import Link from 'next/link';
+import type { ReactElement } from 'react';
+import { RequestState } from '@/shared/configs/app.contants';
 
 const LoginPage: NextPageWithLayout = () => {
-  const userLogined = useAppSelector(selectUser)
-  const dispatch = useAppDispatch()
+  const userLogined = useAppSelector(selectUser);
+  const dispatch = useAppDispatch();
 
   return (
     <div>
@@ -39,15 +39,15 @@ const LoginPage: NextPageWithLayout = () => {
       <br />
       <Link href="/">Homepage</Link>
     </div>
-  )
-}
+  );
+};
 
 LoginPage.getLayout = (page: ReactElement) => {
   return (
     <AuthLayout>
       <div>{page}</div>
     </AuthLayout>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;

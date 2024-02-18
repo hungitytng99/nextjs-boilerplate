@@ -1,6 +1,6 @@
-import Cookies from 'js-cookie'
-import IStorage from '@/shared/interfaces/storage/IStorage'
-import { injectable } from 'inversify'
+import Cookies from 'js-cookie';
+import IStorage from '@/shared/interfaces/storage/IStorage';
+import { injectable } from 'inversify';
 
 @injectable()
 export class CookiesStorage implements IStorage {
@@ -9,13 +9,13 @@ export class CookiesStorage implements IStorage {
       sameSite: 'strict',
       secure: true,
       ...options,
-    })
+    });
   }
   getItem(key: string) {
-    return Cookies.get(key)
+    return Cookies.get(key);
   }
   removeItem(key: string) {
-    Cookies.remove(key)
-    return key
+    Cookies.remove(key);
+    return key;
   }
 }

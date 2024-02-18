@@ -1,5 +1,5 @@
 const appConfigs = {
   logPipes: [console],
-}
+};
 
-export { appConfigs }
+export { appConfigs };
