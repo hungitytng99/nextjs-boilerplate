@@ -1,10 +1,13 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { getRandomUserAsync } from '.';
+import { getTodos, login } from '.';
 import { RequestState } from '@/shared/configs/app.contants';
+import { TodoEntity } from '@/shared/app-model/entities/todo.entity';
 
 const initialState: UserSliceState = {
-  accessToken: '',
   status: RequestState.initial,
+  accessToken: '',
+  getTodoStatus: RequestState.initial,
+  todos: [],
 };
 
 export const userSlice = createSlice({
@@ -17,12 +20,20 @@ export const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getRandomUserAsync.pending, (state) => {
+      .addCase(login.pending, (state) => {
         state.status = RequestState.request;
       })
-      .addCase(getRandomUserAsync.fulfilled, (state, action) => {
+      .addCase(login.fulfilled, (state, action) => {
         state.status = RequestState.success;
         state.accessToken = action.payload.data?.accessToken;
+      })
+      .addCase(getTodos.pending, (state) => {
+        state.getTodoStatus = RequestState.request;
+      })
+      .addCase(getTodos.fulfilled, (state, action) => {
+        state.getTodoStatus = RequestState.success;
+        const todos = action.payload.data as Array<TodoEntity>;
+        state.todos = todos.splice(0, Math.floor(Math.random() * 20));
       });
   },
 });
@@ -30,4 +41,6 @@ export const userSlice = createSlice({
 export interface UserSliceState {
   accessToken?: string;
   status?: RequestState;
+  getTodoStatus?: RequestState;
+  todos: Array<TodoEntity>;
 }

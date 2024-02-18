@@ -1,5 +1,5 @@
 import AuthLayout from '@/components/layout/AuthLayout';
-import { getRandomUserAsync, selectUser, userSlice } from '@/libs/redux/slices';
+import { getTodos, login, selectUser, userSlice } from '@/libs/redux/slices';
 import { useAppDispatch, useAppSelector } from '@/libs/redux/store/hook';
 import { NextPageWithLayout } from '@/pages/_app';
 import { RequestState } from '@/shared/configs/app.contants';
@@ -12,32 +12,38 @@ interface Props {
 }
 
 const LoginPage: NextPageWithLayout<Props> = ({ repo }) => {
-  const userLogined = useAppSelector(selectUser);
+  const userGState = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
 
   return (
     <div>
       <br />
       <strong>
-        {userLogined.accessToken ? (
-          <div>Your token is: {userLogined.accessToken}</div>
+        {userGState.accessToken ? (
+          <div>You enter: {userGState.accessToken}</div>
         ) : (
-          <div>Not logined</div>
+          <div>Not input</div>
         )}
       </strong>
       <br />
       <input
         placeholder="username"
-        value={userLogined.accessToken}
+        value={userGState.accessToken}
         autoFocus
         onChange={(e) => dispatch(userSlice.actions.update(e.target.value))}
       ></input>
       <br />
       <br />
-      <button onClick={() => dispatch(getRandomUserAsync())}>
-        {userLogined.status === RequestState.request && 'Loading...'}
-        {userLogined.status !== RequestState.request && 'Make api call'}
+      <button onClick={() => dispatch(getTodos())}>
+        {userGState.getTodoStatus === RequestState.request && 'Loading...'}
+        {userGState.getTodoStatus !== RequestState.request && 'Get todos'}
       </button>
+
+      <ul>
+        {userGState.todos.map((todo) => {
+          return <li>{todo.title}</li>;
+        })}
+      </ul>
       <br />
       <br />
       <Link href="/buyer/sign-up">Signup</Link>

@@ -6,26 +6,13 @@ import { ShareSymbol } from '@/shared/interfaces/share.types';
 import { MockApiHelper } from '@/shared/helpers/mock-api.helper';
 import { TokenEntity } from '@/shared/app-model/entities/token.entity';
 import { NormalLoginBody } from '@/shared/app-model/params/login.param';
+import { TodoEntity } from '../app-model/entities/todo.entity';
 
 const httpRequest = appContainer.get<IRequest>(ShareSymbol.IRequest);
-
-interface TodoEntity {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-}
 
 export const userRequest = {
   login: async (body?: NormalLoginBody) => {
     try {
-      // const todoResponse: Array<TodoEntity> = await httpRequest.get<Array<TodoEntity>>(
-      //   'https://jsonplaceholder.typicode.com/todos',
-      //   body,
-      //   { isFullPath: true },
-      // );
-      // console.log('todoResponse: ', todoResponse);
-
       // For simulator api testing
       const mockResponse: ICommonResponse<TokenEntity> = {
         data: {
@@ -39,6 +26,27 @@ export const userRequest = {
       return {
         state: RequestState.success,
         data: response.data,
+      };
+    } catch (error) {
+      console.log('error', error);
+      return {
+        error: error,
+        state: RequestState.error,
+      };
+    }
+  },
+
+  getTodos: async (params?: {}) => {
+    try {
+      // Api call
+      const todoResponse: Array<TodoEntity> = await httpRequest.get<Array<TodoEntity>>(
+        'https://jsonplaceholder.typicode.com/todos',
+        params,
+        { isFullPath: true },
+      );
+      return {
+        state: RequestState.success,
+        data: todoResponse,
       };
     } catch (error) {
       console.log('error', error);

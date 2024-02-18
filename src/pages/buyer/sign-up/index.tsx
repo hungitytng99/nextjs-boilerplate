@@ -3,13 +3,13 @@ import type { ReactElement } from 'react';
 import { NextPageWithLayout } from '../../../pages/_app';
 import Link from 'next/link';
 import { useAppSelector } from '@/libs/redux/store/hook';
-import { selectUsername } from '@/libs/redux/slices';
+import { selectUser } from '@/libs/redux/slices';
 
 const SignupPage: NextPageWithLayout = () => {
-  const name = useAppSelector(selectUsername);
+  const user = useAppSelector(selectUser);
   return (
     <div>
-      <strong>{name ? <div>Your name is: {name}</div> : <div>Not logined</div>}</strong>
+      <strong>{user ? <div>Your name is: {user.accessToken}</div> : <div>Not logined</div>}</strong>
       SignUp
       <br />
       <Link href="/buyer/login">Login</Link>
