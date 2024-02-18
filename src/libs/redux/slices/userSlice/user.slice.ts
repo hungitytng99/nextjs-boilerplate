@@ -1,33 +1,33 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import { getRandomUserAsync } from '.'
-import { RequestState } from '@/shared/configs/app.contants'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { getRandomUserAsync } from '.';
+import { RequestState } from '@/shared/configs/app.contants';
 
 const initialState: UserSliceState = {
-  name: '',
+  accessToken: '',
   status: RequestState.initial,
-}
+};
 
 export const userSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
     update: (state, action: PayloadAction<string>) => {
-      state.name = action.payload
+      state.accessToken = action.payload;
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(getRandomUserAsync.pending, (state) => {
-        state.status = RequestState.request
+        state.status = RequestState.request;
       })
       .addCase(getRandomUserAsync.fulfilled, (state, action) => {
-        state.status = RequestState.success
-        state.name = action.payload.name
-      })
+        state.status = RequestState.success;
+        state.accessToken = action.payload.data?.accessToken;
+      });
   },
-})
+});
 
 export interface UserSliceState {
-  name: string
-  status: RequestState
+  accessToken?: string;
+  status?: RequestState;
 }

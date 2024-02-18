@@ -7,7 +7,7 @@ function AppHeader() {
   const userLogined = useAppSelector(selectUser)
   return (
     <div>
-      <div>{userLogined.name}</div>
+      <div>{userLogined.accessToken}</div>
       AppHeader <br />
     </div>
   )

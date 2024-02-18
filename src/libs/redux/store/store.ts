@@ -1,12 +1,12 @@
-import { configureStore, type ThunkAction, type Action } from '@reduxjs/toolkit'
+import { configureStore, type ThunkAction, type Action } from '@reduxjs/toolkit';
 import {
   useSelector as useReduxSelector,
   useDispatch as useReduxDispatch,
   type TypedUseSelectorHook,
-} from 'react-redux'
+} from 'react-redux';
 
-import rootReducer from './rootReducer'
-import { middleware } from './middleware'
+import rootReducer from './rootReducer';
+import { middleware } from './middleware';
 import {
   FLUSH,
   PAUSE,
@@ -16,15 +16,15 @@ import {
   REHYDRATE,
   persistReducer,
   persistStore,
-} from 'redux-persist'
-import storage from 'redux-persist/libs/storage'
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'rootReducer',
   storage,
-}
+};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const reduxStore = configureStore({
   reducer: persistedReducer,
@@ -33,20 +33,20 @@ export const reduxStore = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(middleware)
+    }).concat(middleware);
   },
-})
-export const useDispatch = () => useReduxDispatch<ReduxDispatch>()
-export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector
-export const persistor = persistStore(reduxStore)
+});
+export const useDispatch = () => useReduxDispatch<ReduxDispatch>();
+export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;
+export const persistor = persistStore(reduxStore);
 
 /* Types */
-export type ReduxStore = typeof reduxStore
-export type ReduxState = ReturnType<typeof reduxStore.getState>
-export type ReduxDispatch = typeof reduxStore.dispatch
+export type ReduxStore = typeof reduxStore;
+export type ReduxState = ReturnType<typeof reduxStore.getState>;
+export type ReduxDispatch = typeof reduxStore.dispatch;
 export type ReduxThunkAction<ReturnType = void> = ThunkAction<
   ReturnType,
   ReduxState,
   unknown,
   Action
->
+>;

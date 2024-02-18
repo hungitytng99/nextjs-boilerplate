@@ -14,8 +14,8 @@ const LoginPage: NextPageWithLayout = () => {
     <div>
       <br />
       <strong>
-        {userLogined.name ? (
-          <div>Your name is: {userLogined.name}</div>
+        {userLogined.accessToken ? (
+          <div>Your token is: {userLogined.accessToken}</div>
         ) : (
           <div>Not logined</div>
         )}
@@ -23,7 +23,7 @@ const LoginPage: NextPageWithLayout = () => {
       <br />
       <input
         placeholder="username"
-        value={userLogined.name}
+        value={userLogined.accessToken}
         autoFocus
         onChange={(e) => dispatch(userSlice.actions.update(e.target.value))}
       ></input>

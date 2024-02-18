@@ -1,5 +1,5 @@
-export default interface ICommonResponse {
-  status?: number
-  message?: string
-  data?: Array<any> | object | string | number
+export default interface ICommonResponse<T> {
+  status?: number;
+  message?: string;
+  data?: T;
 }
