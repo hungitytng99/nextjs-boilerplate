@@ -9,13 +9,22 @@ import { NormalLoginBody } from '@/shared/app-model/params/login.param';
 
 const httpRequest = appContainer.get<IRequest>(ShareSymbol.IRequest);
 
+interface TodoEntity {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
 export const userRequest = {
   login: async (body?: NormalLoginBody) => {
     try {
-      // const response: ICommonResponse = await httpRequest.post<ICommonResponse>(
-      //   '/',
-      //   body,
-      // )
+      const todoResponse: Array<TodoEntity> = await httpRequest.get<Array<TodoEntity>>(
+        'https://jsonplaceholder.typicode.com/todos',
+        body,
+        { isFullPath: true },
+      );
+      console.log('todoResponse: ', todoResponse);
 
       // For simulator api testing
       const mockResponse: ICommonResponse<TokenEntity> = {

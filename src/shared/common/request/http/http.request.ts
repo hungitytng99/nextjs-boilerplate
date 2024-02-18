@@ -55,7 +55,6 @@ export class HttpRequest implements IRequest {
       },
       ...options,
     };
-
     return opts;
   }
 
