@@ -1,17 +1,20 @@
 import DemoComponents from '@/components/homepage/DemoComponents';
 import AppLayout from '@/components/layout/AppLayout';
-import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 
 const HomePage = () => {
   return (
     <AppLayout>
-      Home Page
+      <div>Home Page</div>
       <br />
       <DemoComponents />
-      <Link href="/buyer/login">Login</Link>
+      <Link href="/buyer/login" className="text-sky-700 underline">
+        Login
+      </Link>
       <br />
-      <Link href="/search">Search</Link>
+      <Link href="/search" className="text-sky-700 underline">
+        Search
+      </Link>
     </AppLayout>
   );
 };

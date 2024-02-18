@@ -16,7 +16,7 @@ const LoginPage: NextPageWithLayout<Props> = ({ repo }) => {
   const dispatch = useAppDispatch();
 
   return (
-    <div>
+    <div className="ml-3">
       <br />
       <strong>
         {userGState.accessToken ? (
@@ -27,16 +27,17 @@ const LoginPage: NextPageWithLayout<Props> = ({ repo }) => {
       </strong>
       <br />
       <input
-        placeholder="username"
+        placeholder="Enter anything"
+        className="border border-zinc-500"
         value={userGState.accessToken}
         autoFocus
         onChange={(e) => dispatch(userSlice.actions.update(e.target.value))}
       ></input>
       <br />
       <br />
-      <button onClick={() => dispatch(getTodos())}>
+      <button className="border border-gray-500" onClick={() => dispatch(getTodos())}>
         {userGState.getTodoStatus === RequestState.request && 'Loading...'}
-        {userGState.getTodoStatus !== RequestState.request && 'Get todos'}
+        {userGState.getTodoStatus !== RequestState.request && 'Click here to get todos'}
       </button>
 
       <ul>
@@ -46,9 +47,13 @@ const LoginPage: NextPageWithLayout<Props> = ({ repo }) => {
       </ul>
       <br />
       <br />
-      <Link href="/buyer/sign-up">Signup</Link>
+      <Link href="/buyer/sign-up" className="text-sky-700 underline">
+        Signup
+      </Link>
       <br />
-      <Link href="/">Homepage</Link>
+      <Link href="/" className="text-sky-700 underline">
+        Homepage
+      </Link>
     </div>
   );
 };

@@ -12,7 +12,9 @@ SearchPage.getLayout = (page: ReactElement) => {
     <AppLayout>
       <div>{page}</div>
       <br />
-      <Link href="/">Homepage</Link>
+      <Link href="/" className="text-sky-700 underline">
+        Homepage
+      </Link>
     </AppLayout>
   );
 };

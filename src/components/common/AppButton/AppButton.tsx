@@ -8,7 +8,11 @@ interface Props {
 }
 
 function AppButton({ onClick = () => {}, title = '' }: Props) {
-  return <button onClick={onClick}>{title}</button>;
+  return (
+    <button className="mt-2 border border-zinc-500" onClick={onClick}>
+      {title}
+    </button>
+  );
 }
 
 export default AppButton;

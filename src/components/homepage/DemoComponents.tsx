@@ -14,7 +14,12 @@ function DemoComponents() {
   return (
     <>
       <br />
-      <input value={cookiesValue} onChange={(e) => setCookiesValue(e.target.value)}></input>
+      <input
+        className="border border-zinc-500"
+        placeholder="Enter cookies"
+        value={cookiesValue}
+        onChange={(e) => setCookiesValue(e.target.value)}
+      ></input>
       <br />
       <AppButton onClick={handleSetCookie} title="Save cookies" />
       <br />

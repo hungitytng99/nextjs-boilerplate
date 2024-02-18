@@ -10,9 +10,10 @@ const SignupPage: NextPageWithLayout = () => {
   return (
     <div>
       <strong>{user ? <div>Your name is: {user.accessToken}</div> : <div>Not logined</div>}</strong>
-      SignUp
       <br />
-      <Link href="/buyer/login">Login</Link>
+      <Link href="/buyer/login" className="text-sky-700 underline">
+        Login
+      </Link>
     </div>
   );
 };
