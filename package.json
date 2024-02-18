@@ -44,6 +44,6 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "**/*.{ts,js,json,scss,sass,css}": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "**/*.{ts,js,tsx,jsx,json,scss,sass,css}": "prettier --write \"**/*.{js,jsx,ts,tsx,json,,scss,sass,css}\""
   }
 }
