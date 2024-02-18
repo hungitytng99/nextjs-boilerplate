@@ -10,6 +10,11 @@
 
 ## More note
 
+## Work flow
+1. Checkout sang branch mới khi làm 1 feature.
+2. Commit theo format đã được quy định ở bên dưới.
+2. Khi làm xong tạo PR và báo cho Leader.
+
 ## Commits: 
 Khi commit cần commit dưới dạng: `[Prefix]:[Description]` với `Prefix` là 1 trong các prefix sau đây:
 - feat: thêm một feature
