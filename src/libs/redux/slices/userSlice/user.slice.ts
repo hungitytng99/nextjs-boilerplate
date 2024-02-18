@@ -11,7 +11,7 @@ const initialState: UserSliceState = {
 };
 
 export const userSlice = createSlice({
-  name: 'counter',
+  name: 'user',
   initialState,
   reducers: {
     update: (state, action: PayloadAction<string>) => {
